@@ -353,6 +353,7 @@ class _PlayScreenState extends State<PlayScreen> {
     Color iconColor;
     Color backgroundColor;
     Color buttonColor;
+
     if (winner == widget.userMark) {
       message = 'Congratulations! You Win!';
       iconData = Icons.sentiment_very_satisfied;
@@ -377,43 +378,50 @@ class _PlayScreenState extends State<PlayScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return AlertDialog(
-          title: Icon(
-            iconData,
-            size: 48,
-            color: iconColor,
-          ),
-          content: Text(
-            message,
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.black,
+        return WillPopScope(
+          onWillPop: () async {
+            _restartGame();
+            return true;
+          },
+          child: AlertDialog(
+            title: Icon(
+              iconData,
+              size: 48,
+              color: iconColor,
             ),
-            textAlign: TextAlign.center,
-          ),
-          backgroundColor: backgroundColor,
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                _restartGame();
-              },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(buttonColor),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+            content: Text(
+              message,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            backgroundColor: backgroundColor,
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  _restartGame();
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(buttonColor),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                 ),
+                child: Text('Play Again'),
               ),
-              child: Text('Play Again'),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
   }
+
 
   void _restartGame() {
     setState(() {
