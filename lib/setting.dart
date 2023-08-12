@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MusicSettings extends ChangeNotifier {
   bool _isMusicOn = true;
 
   bool get isMusicOn => _isMusicOn;
 
-  void toggleMusic(BuildContext context, bool value) {
+  Future<void> loadMusicSetting() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    _isMusicOn = prefs.getBool('isMusicOn') ?? true;
+    notifyListeners();
+    if (_isMusicOn) {
+      FlameAudio.bgm.resume();
+    } else {
+      FlameAudio.bgm.pause();
+    }
+  }
+
+  void toggleMusic(BuildContext context, bool value) async {
     _isMusicOn = value;
     notifyListeners();
-    if (value) {
-      FlameAudio.bgm.resume();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isMusicOn', _isMusicOn);
+    if (_isMusicOn) {
+      FlameAudio.bgm.play('background.mp3', volume: 1.0);
     } else {
       FlameAudio.bgm.pause();
     }

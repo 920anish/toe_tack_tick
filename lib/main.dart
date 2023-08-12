@@ -4,13 +4,17 @@ import 'package:provider/provider.dart';
 import 'package:toe_tack_tick/menu.dart';
 import 'package:toe_tack_tick/setting.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
+  // Load the music settings
+  MusicSettings musicSettings = MusicSettings();
+  await musicSettings.loadMusicSetting();
+
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => MusicSettings(),
+    ChangeNotifierProvider.value(
+      value: musicSettings,
       child: MyApp(),
     ),
   );

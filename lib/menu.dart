@@ -8,7 +8,6 @@ import 'package:toe_tack_tick/setting.dart';
 
 import 'choose.dart';
 
-
 class MenuScreen extends StatefulWidget {
   @override
   _MenuScreenState createState() => _MenuScreenState();
@@ -23,9 +22,15 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this); // Register WidgetsBindingObserver
-    loadBackgroundMusic();
     setupAnimation();
+
+    final musicSettings = Provider.of<MusicSettings>(context, listen: false);
+
+    if (musicSettings.isMusicOn) {
+      _playBackgroundMusic();
+    }
   }
+
 
   void setupAnimation() {
     titleAnimationController = AnimationController(
@@ -40,19 +45,21 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
       ),
     );
   }
-
-  Future<void> loadBackgroundMusic() async {
+  void _playBackgroundMusic() {
     final musicSettings = Provider.of<MusicSettings>(context, listen: false);
 
     if (musicSettings.isMusicOn) {
       try {
-        await FlameAudio.bgm.play('background.mp3');
+        FlameAudio.bgm.play('background.mp3', volume: 1.0);
       } catch (e) {
-        print('Error loading background music: $e');
+        print('Error loading and playing background music: $e');
       }
+    } else {
+      FlameAudio.bgm.stop();
     }
-
   }
+
+
 
   @override
   void dispose() {
@@ -61,19 +68,19 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
     super.dispose();
   }
 
-  // Override didChangeAppLifecycleState to pause/resume audio
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.paused) {
+    final musicSettings = Provider.of<MusicSettings>(context, listen: false);
+
+    if (state == AppLifecycleState.paused || !musicSettings.isMusicOn) {
       FlameAudio.bgm.pause();
-    } else if (state == AppLifecycleState.resumed) {
+    } else if (state == AppLifecycleState.resumed && musicSettings.isMusicOn) {
       FlameAudio.bgm.resume();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         children: [
@@ -114,7 +121,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
                 CustomButton(
                   onPressed: () {
                     FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
-                    Navigator.push(context, MaterialPageRoute(builder: (_) =>SettingsScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => SettingsScreen()));
                   },
                   label: 'Settings',
                 ),
