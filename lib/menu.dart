@@ -63,7 +63,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
   @override
   void dispose() {
     titleAnimationController.dispose();
-    WidgetsBinding.instance.removeObserver(this); // Unregister WidgetsBindingObserver
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -111,7 +111,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
                 SizedBox(height: 50),
                 CustomButton(
                   onPressed: () {
-                    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+                    FlameAudio.play('button.mp3');
                     Navigator.push(context, MaterialPageRoute(builder: (_) => ChooseScreen()));
                   },
                   label: 'Play',
@@ -119,7 +119,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
                 SizedBox(height: 20),
                 CustomButton(
                   onPressed: () {
-                    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+                    FlameAudio.play('button.mp3');
                     Navigator.push(context, MaterialPageRoute(builder: (_) => SettingsScreen()));
                   },
                   label: 'Settings',
@@ -127,7 +127,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
                 SizedBox(height: 20),
                 CustomButton(
                   onPressed: () {
-                    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+                    FlameAudio.play('button.mp3');
                     Navigator.push(context, MaterialPageRoute(builder: (_) => AboutPage()));
                   },
                   label: 'About',

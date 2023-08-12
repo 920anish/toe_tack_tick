@@ -81,7 +81,7 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Text(
-                'Simple Tic Tac Toe game with Unbeatable AI',
+                '\n\nSimple Tic Tac Toe game with Unbeatable AI',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 26,
@@ -90,10 +90,11 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Text(
-                'Connect with me:',
+                'Connect with me:\n\n',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 32,
+                  // fontWeight: FontWeight.bold,
+                  fontFamily: 'Hello Graduation',
                 ),
               ),
               SizedBox(height: 8),

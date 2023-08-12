@@ -64,6 +64,6 @@ class ChooseScreen extends StatelessWidget {
   }
 
   void _playButtonClickSound() {
-    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3'); // Replace with your audio file name in assets
+    FlameAudio.play('button.mp3');
   }
 }

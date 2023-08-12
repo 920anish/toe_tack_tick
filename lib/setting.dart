@@ -71,7 +71,7 @@ class SettingsScreen extends StatelessWidget {
   }
 
   void _toggleMusic(BuildContext context, bool value) {
-    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+    FlameAudio.play('button.mp3');
     context.read<MusicSettings>().toggleMusic(context, value);
   }
 

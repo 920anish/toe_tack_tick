@@ -177,7 +177,7 @@ class _PlayScreenState extends State<PlayScreen> {
           _botMove();
         }
       });
-      FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+      FlameAudio.play('button.mp3');
     }
   }
 
@@ -425,7 +425,7 @@ class _PlayScreenState extends State<PlayScreen> {
 
   void _restartGame() {
     setState(() {
-      FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
+      FlameAudio.play('button.mp3');
       _board = List.generate(3, (_) => List.generate(3, (_) => null));
       _isGameOver = false;
       _winner = null;
