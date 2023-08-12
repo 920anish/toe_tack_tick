@@ -14,11 +14,15 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 
 ## Screenshots
 
-![Screenshot 1](screenshots/Screenshot1.png)
-![Screenshot 2](screenshots/Screenshot2.png)
-![Screenshot 3](screenshots/Screenshot3.png)
-![Screenshot 4](screenshots/Screenshot4.png)
-![Screenshot 5](screenshots/Screenshot5.png)
+## Screenshots
+
+<img src="screenshots/Screenshot1.png" width="300" alt="Screenshot 1">
+<img src="screenshots/Screenshot2.png" width="300" alt="Screenshot 2">
+<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 3">
+<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 4">
+<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 5">
+
+
 
 
 ## Getting Started
