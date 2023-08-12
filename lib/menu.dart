@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:go_router/go_router.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
 import 'package:toe_tack_tick/setting.dart';
-
+import 'about.dart';
 import 'choose.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -129,7 +128,7 @@ class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateM
                 CustomButton(
                   onPressed: () {
                     FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
-                    GoRouter.of(context).go('/about');
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => AboutPage()));
                   },
                   label: 'About',
                 ),

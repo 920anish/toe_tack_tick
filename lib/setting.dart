@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[50],
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         elevation: 0, // Remove the shadow
         backgroundColor: Colors.transparent,
@@ -44,7 +44,7 @@ class SettingsScreen extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Hello Graduation',
             fontSize: 36,
-            color: Colors.black,
+            color: Colors.white,
             fontWeight: FontWeight.bold
           ),
         ),
@@ -89,7 +89,7 @@ class SettingsScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 28,
             fontFamily: 'Hello Graduation',
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         SizedBox(height: 10),
@@ -98,7 +98,7 @@ class SettingsScreen extends StatelessWidget {
           style: TextStyle(
             fontSize: 26,
             fontFamily: 'Hello Graduation',
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
         SizedBox(height: 20),
@@ -109,7 +109,7 @@ class SettingsScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontFamily: 'Hello Graduation',
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             Spacer(),
