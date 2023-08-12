@@ -51,17 +51,17 @@ class AboutPage extends StatelessWidget {
                   IconButton(
                     icon: FaIcon(
                       FontAwesomeIcons.envelope,
-                      size: 36,
+                      size: 28,
                     ),
                     onPressed: () {
                       _launchUrl('mailto:920anish920@gmail.com');
                     },
                   ),
-                  SizedBox(width: 16), // Increased spacing between icons
+                  SizedBox(width: 16),
                   IconButton(
                     icon: FaIcon(
                       FontAwesomeIcons.link,
-                      size: 36,
+                      size: 28,
                     ),
                     onPressed: () {
                       _launchUrl('https://anishmishra.com.np');
@@ -71,7 +71,7 @@ class AboutPage extends StatelessWidget {
                   IconButton(
                     icon: FaIcon(
                       FontAwesomeIcons.twitter,
-                      size: 36,
+                      size: 28,
                     ),
                     onPressed: () {
                       _launchUrl('https://twitter.com/anish920920');
@@ -81,16 +81,17 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: 24),
               Text(
-                '\n\nSimple Tic Tac Toe game with Unbeatable AI',
+                '\nSimple Tic Tac Toe game with Unbeatable AI\n',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 26,
+                  fontSize: 32,
                   fontFamily: 'Hello Graduation',
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 24),
               Text(
-                'Connect with me:\n\n',
+                'Connect with me:',
                 style: TextStyle(
                   fontSize: 32,
                   // fontWeight: FontWeight.bold,
