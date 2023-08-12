@@ -30,7 +30,7 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 3. Navigate to the project directory and run `flutter pub get` to install dependencies.
 4. Run the app using `flutter run`.
 
-    ###OR
+    ### OR
 
    To try out the game, you can download and install the APK file from the following link:  
    [Download APK](https://drive.google.com/file/d/1aP1nsMR0epRH0B-bJB1PGhn1ct5OeY06/view?usp=sharing)
