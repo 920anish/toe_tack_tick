@@ -15,12 +15,12 @@ class MenuScreen extends StatefulWidget {
 class _MenuScreenState extends State<MenuScreen> with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late AnimationController titleAnimationController;
   late Animation<double> titleAnimation;
-  bool _isRiveLoading = false; // Set to false to display the Rive animation immediately
+  bool _isRiveLoading = false;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this); // Register WidgetsBindingObserver
+    WidgetsBinding.instance.addObserver(this);
     setupAnimation();
 
     final musicSettings = Provider.of<MusicSettings>(context, listen: false);

@@ -3,8 +3,6 @@
 
 A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 
-![Gameplay Video](screenshots/Screen_recording.webm)
-
 ## Features
 
 - Play against an unbeatable AI opponent.
@@ -12,7 +10,6 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 - Enjoyable sound effect and music.
 - Responsive design for various screen sizes.
 
-## Screenshots
 
 ## Screenshots
 

@@ -256,7 +256,7 @@ class _PlayScreenState extends State<PlayScreen> {
       for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
           if (board[i][j] == null) {
-            board[i][j] = 'X'; // Set the mark to 'X'
+            board[i][j] = 'X';
             int score = _minimaxWithAlphaBeta(
                 board, depth + 1, false, alpha, beta);
             board[i][j] = null;
