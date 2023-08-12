@@ -1,16 +1,39 @@
-# toe_tack_tick
 
-A simple tic tac toe game ig
+# Toe Tack TICK
+
+A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
+
+![Gameplay Video](screenshots/Screen_recording.webm)
+
+## Features
+
+- Play against an unbeatable AI opponent.
+- Beautiful and modern user interface.
+- Enjoyable sound effect and music.
+- Responsive design for various screen sizes.
+
+## Screenshots
+
+![Screenshot 1](screenshots/Screenshot1.png)
+![Screenshot 2](screenshots/Screenshot2.png)
+![Screenshot 3](screenshots/Screenshot3.png)
+![Screenshot 4](screenshots/Screenshot4.png)
+![Screenshot 5](screenshots/Screenshot5.png)
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone this repository.
+2. Make sure you have Flutter installed on your machine.
+3. Navigate to the project directory and run `flutter pub get` to install dependencies.
+4. Run the app using `flutter run`.
 
-A few resources to get you started if this is your first Flutter project:
+## How to Play
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Launch the app and choose your mark (X or O).
+- Make your moves by tapping on the empty cells on the board.
+- Try to form a line of your marks (horizontal, vertical, or diagonal) to win the game.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributions
+Contributions to this project are welcome! Feel free to open issues and submit pull requests.
+
