@@ -1,5 +1,6 @@
 
-# Toe Tack TICK
+
+# Toe Tack Tick
 
 A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 
@@ -13,11 +14,11 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 
 ## Screenshots
 
-<img src="screenshots/Screenshot1.png" width="300" alt="Screenshot 1">
-<img src="screenshots/Screenshot2.png" width="300" alt="Screenshot 2">
-<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 3">
-<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 4">
-<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 5">
+<img src="screenshots/Screenshot1.png" width="300" alt="Screenshot 1">  
+<img src="screenshots/Screenshot2.png" width="300" alt="Screenshot 2">  
+<img src="screenshots/Screenshot3.png" width="300" alt="Screenshot 3">  
+<img src="screenshots/Screenshot4.png" width="300" alt="Screenshot 4">  
+<img src="screenshots/Screenshot5.png" width="300" alt="Screenshot 5">  
 
 
 
@@ -28,6 +29,16 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 2. Make sure you have Flutter installed on your machine.
 3. Navigate to the project directory and run `flutter pub get` to install dependencies.
 4. Run the app using `flutter run`.
+   ###OR
+   To try out the game, you can download and install the APK file from the following link:  
+   [Download APK](https://drive.google.com/file/d/1aP1nsMR0epRH0B-bJB1PGhn1ct5OeY06/view?usp=sharing)
+
+   Make sure to enable installation from unknown sources on your device before installing the APK.
+
+   Once the APK is installed, you can open the game and start playing!
+
+
+
 
 ## How to Play
 
@@ -37,4 +48,3 @@ A simple Tic Tac Toe game with an unbeatable AI opponent. Built using Flutter.
 
 ## Contributions
 Contributions to this project are welcome! Feel free to open issues and submit pull requests.
-
