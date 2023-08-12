@@ -31,30 +31,47 @@ class MusicSettings extends ChangeNotifier {
     }
   }
 }
-
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
-        title: Text('Settings'),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(height: 20),
-          _buildSettingItem(
-            title: 'Music',
-            description: 'Toggle background music',
-            value: context.watch<MusicSettings>().isMusicOn,
-            onChanged: (value) => _toggleMusic(context, value),
+        elevation: 0, // Remove the shadow
+        backgroundColor: Colors.transparent,
+        title: Text(
+          'Settings',
+          style: TextStyle(
+            fontFamily: 'Hello Graduation',
+            fontSize: 36,
+            color: Colors.black,
+            fontWeight: FontWeight.bold
           ),
-        ],
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 20),
+            _buildSettingItem(
+              title: 'Music',
+              description: 'Turn on or off',
+              value: context.watch<MusicSettings>().isMusicOn,
+              onChanged: (value) => _toggleMusic(context, value),
+            ),
+            // Add more settings here
+          ],
+        ),
       ),
     );
   }
 
   void _toggleMusic(BuildContext context, bool value) {
+    FlameAudio.play('zapsplat_multimedia_button_click_bright_003_92100.mp3');
     context.read<MusicSettings>().toggleMusic(context, value);
   }
 
@@ -64,34 +81,49 @@ class SettingsScreen extends StatelessWidget {
     required bool value,
     required ValueChanged<bool> onChanged,
   }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 28,
+            fontFamily: 'Hello Graduation',
+            color: Colors.black,
+          ),
+        ),
+        SizedBox(height: 10),
+        Text(
+          description,
+          style: TextStyle(
+            fontSize: 26,
+            fontFamily: 'Hello Graduation',
+            color: Colors.grey,
+          ),
+        ),
+        SizedBox(height: 20),
+        Row(
+          children: [
+            Text(
+              'Background Music',
+              style: TextStyle(
+                fontSize: 28,
+                fontFamily: 'Hello Graduation',
+                color: Colors.black,
+              ),
             ),
-          ),
-          SizedBox(height: 5),
-          Text(
-            description,
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
+            Spacer(),
+            Switch(
+              value: value,
+              onChanged: onChanged,
+              activeColor: Colors.blue,
+              inactiveThumbColor: Colors.white,
+              inactiveTrackColor: Colors.grey[400],
             ),
-          ),
-          SizedBox(height: 5),
-          Switch(
-            value: value,
-            onChanged: onChanged,
-          ),
-          Divider(height: 10, color: Colors.grey),
-        ],
-      ),
+          ],
+        ),
+        Divider(height: 20, color: Colors.grey),
+      ],
     );
   }
 }

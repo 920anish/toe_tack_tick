@@ -21,7 +21,6 @@ class _PlayScreenState extends State<PlayScreen> {
 
 
   bool _isBotMoving = false; // Flag to check if the bot is currently making a move
-  // late String _botMark; // Add this line
 
   @override
   void initState() {
@@ -33,9 +32,6 @@ class _PlayScreenState extends State<PlayScreen> {
       _isUserTurn = false;
       _botMove();
     }
-
-    // Assign bot mark as 'X'
-    // _botMark = 'X';
   }
 
 
