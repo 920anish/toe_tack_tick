@@ -378,11 +378,12 @@ class _PlayScreenState extends State<PlayScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return WillPopScope(
-          onWillPop: () async {
+        return PopScope(
+          canPop: true,
+          onPopInvoked: (didPop) {
             _restartGame();
-            return true;
           },
+
           child: AlertDialog(
             title: Icon(
               iconData,
@@ -405,9 +406,9 @@ class _PlayScreenState extends State<PlayScreen> {
                   _restartGame();
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(buttonColor),
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
-                  shape: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(buttonColor),
+                  foregroundColor: WidgetStateProperty.all(Colors.white),
+                  shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
                     ),
